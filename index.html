@@ -3,65 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile CRM System</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-        header { background: #4a90e2; color: white; padding: 10px; text-align: center; }
-        nav { display: flex; justify-content: space-around; background: #f1f1f1; padding: 10px; }
-        section { padding: 20px; }
-        .responsive { display: flex; flex-wrap: wrap; justify-content: space-between; }
-        .card { background: white; border: 1px solid #ddd; border-radius: 5px; margin: 10px; padding: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 48%; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <title>CRM System</title>
 </head>
 <body>
-    <header>
-        <h1>Mobile CRM Dashboard</h1>
-    </header>
-    <nav>
-        <a href="#customers">Customers</a>
-        <a href="#sales">Sales Pipeline</a>
-        <a href="#appointments">Appointments</a>
-        <a href="#analytics">Analytics</a>
-        <a href="#promotions">Promotions</a>
-        <a href="#email">Email</a>
-        <a href="#settings">Settings</a>
+    <!-- Sidebar Navigation -->
+    <nav id="sidebar">
+        <h2>CRM Navigation</h2>
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#customers">Customers</a></li>
+            <li><a href="#sales">Sales Pipeline</a></li>
+            <li><a href="#appointments">Appointments</a></li>
+            <li><a href="#analytics">Analytics</a></li>
+            <li><a href="#promotions">Promotions</a></li>
+            <li><a href="#email">Email Marketing</a></li>
+            <li><a href="#settings">Settings</a></li>
+        </ul>
     </nav>
-    <section class="responsive">
-        <div class="card" id="customers">
-            <h2>Customers</h2>
-            <p>List of customers with contact details.</p>
-            <div class="customer-list">
-                <!-- Mock data would go here -->
+    
+    <!-- Main Content -->
+    <div id="content">
+        <div id="dashboard">
+            <h1>Dashboard</h1>
+            <div class="stats-cards">
+                <div class="card">Active Customers: <span id="active-customers">0</span></div>
+                <div class="card">Sales Today: <span id="sales-today">0</span></div>
+                <div class="card">Total Revenue: <span id="total-revenue">$0</span></div>
+            </div>
+            <div class="charts">
+                <canvas id="sales-chart"></canvas>
             </div>
         </div>
-        <div class="card" id="sales">
-            <h2>Sales Pipeline</h2>
-            <p>Overview of sales stages and deals.</p>
+        
+        <div id="customers">
+            <h1>Customers</h1>
+            <input type="text" id="customer-search" placeholder="Search Customers...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody id="customer-table">
+                    <!-- Customer rows will be inserted here dynamically -->
+                </tbody>
+            </table>
         </div>
-        <div class="card" id="appointments">
-            <h2>Appointments</h2>
-            <p>Manage your appointments.</p>
+        
+        <div id="sales">
+            <h1>Sales Pipeline</h1>
+            <div class="pipeline">
+                <div class="stage" data-stage="lead">Leads</div>
+                <div class="stage" data-stage="prospect">Prospects</div>
+                <div class="stage" data-stage="negotiation">Negotiation</div>
+                <div class="stage" data-stage="closed-won">Closed Won</div>
+                <div class="stage" data-stage="closed-lost">Closed Lost</div>
+                <div class="stage" data-stage="nurturing">Nurturing</div>
+            </div>
         </div>
-        <div class="card" id="analytics">
-            <h2>Analytics</h2>
-            <p>Insights and reports from your CRM data.</p>
+        
+        <div id="appointments">
+            <h1>Appointments Calendar</h1>
+            <div id="calendar"></div>
         </div>
-        <div class="card" id="promotions">
-            <h2>Promotions</h2>
-            <p>Create and manage promotions.</p>
+        
+        <div id="analytics">
+            <h1>Analytics Reports</h1>
+            <div class="report">
+                <h2>Performance Overview</h2>
+                <canvas id="analytics-chart"></canvas>
+            </div>
         </div>
-        <div class="card" id="email">
-            <h2>Email</h2>
-            <p>Manage your communications.</p>
+        
+        <div id="promotions">
+            <h1>Promotions Management</h1>
+            <button id="create-promotion">Create Promotion</button>
         </div>
-        <div class="card" id="settings">
-            <h2>Settings</h2>
-            <p>Adjust your preferences.</p>
+        
+        <div id="email">
+            <h1>Email Marketing</h1>
+            <button id="send-email">Send Email</button>
         </div>
-    </section>
-    <script>
-        // Example JavaScript for dynamic interactions
-        console.log('CRM Loaded');
-    </script>
+        
+        <div id="settings">
+            <h1>Settings</h1>
+            <form id="settings-form">
+                <label for="notify-email">Notification Email:</label>
+                <input type="text" id="notify-email">
+                <button type="submit">Save Settings</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
