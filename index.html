@@ -3,63 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>CRM System</title>
+    <title>Mobile CRM System</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background: #4a90e2; color: white; padding: 10px; text-align: center; }
+        nav { display: flex; justify-content: space-around; background: #f1f1f1; padding: 10px; }
+        section { padding: 20px; }
+        .responsive { display: flex; flex-wrap: wrap; justify-content: space-between; }
+        .card { background: white; border: 1px solid #ddd; border-radius: 5px; margin: 10px; padding: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 48%; }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Mobile-Optimized CRM Dashboard</h1>
-        <nav>
-            <ul>
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#customers">Customers</a></li>
-                <li><a href="#sales-pipeline">Sales Pipeline</a></li>
-                <li><a href="#appointments">Appointments</a></li>
-                <li><a href="#analytics">Analytics</a></li>
-                <li><a href="#promotions">Promotions</a></li>
-                <li><a href="#email">Email</a></li>
-                <li><a href="#settings">Settings</a></li>
-            </ul>
-        </nav>
+        <h1>Mobile CRM Dashboard</h1>
     </header>
-    
-    <main>
-        <section id="dashboard">
-            <h2>Dashboard</h2>
-            <!-- Dashboard content here -->
-        </section>
-        <section id="customers">
+    <nav>
+        <a href="#customers">Customers</a>
+        <a href="#sales">Sales Pipeline</a>
+        <a href="#appointments">Appointments</a>
+        <a href="#analytics">Analytics</a>
+        <a href="#promotions">Promotions</a>
+        <a href="#email">Email</a>
+        <a href="#settings">Settings</a>
+    </nav>
+    <section class="responsive">
+        <div class="card" id="customers">
             <h2>Customers</h2>
-            <!-- Customers content here -->
-        </section>
-        <section id="sales-pipeline">
+            <p>List of customers with contact details.</p>
+            <div class="customer-list">
+                <!-- Mock data would go here -->
+            </div>
+        </div>
+        <div class="card" id="sales">
             <h2>Sales Pipeline</h2>
-            <!-- Sales pipeline content here -->
-        </section>
-        <section id="appointments">
+            <p>Overview of sales stages and deals.</p>
+        </div>
+        <div class="card" id="appointments">
             <h2>Appointments</h2>
-            <!-- Appointments content here -->
-        </section>
-        <section id="analytics">
+            <p>Manage your appointments.</p>
+        </div>
+        <div class="card" id="analytics">
             <h2>Analytics</h2>
-            <!-- Analytics content here -->
-        </section>
-        <section id="promotions">
+            <p>Insights and reports from your CRM data.</p>
+        </div>
+        <div class="card" id="promotions">
             <h2>Promotions</h2>
-            <!-- Promotions content here -->
-        </section>
-        <section id="email">
+            <p>Create and manage promotions.</p>
+        </div>
+        <div class="card" id="email">
             <h2>Email</h2>
-            <!-- Email content here -->
-        </section>
-        <section id="settings">
+            <p>Manage your communications.</p>
+        </div>
+        <div class="card" id="settings">
             <h2>Settings</h2>
-            <!-- Settings content here -->
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2026 CRM System. All rights reserved.</p>
-    </footer>
+            <p>Adjust your preferences.</p>
+        </div>
+    </section>
+    <script>
+        // Example JavaScript for dynamic interactions
+        console.log('CRM Loaded');
+    </script>
 </body>
 </html>
